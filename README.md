@@ -47,7 +47,7 @@ graph TD
 
 1. Clone o repositório:
    ```bash
-   git clone https://github.com/seu-usuario/edge-network-identity-ui.git
+   git clone https://github.com/luizhanauer/edge-network-identity-ui.git
    cd edge-network-identity-ui
    ```
 
@@ -59,7 +59,7 @@ graph TD
 3. Configure as variáveis de ambiente:
    Crie um arquivo `.env` na raiz do projeto contendo a URL da sua API Worker e dos serviços integrados:
    ```env
-   VITE_API_URL=https://sua-api-worker.workers.dev/
+   VITE_API_URL=https://meuip-worker.hanauerlabs.com.br/
    VITE_NETMIRROR_URL=https://luizhanauer.github.io/netmirror
    ```
 
