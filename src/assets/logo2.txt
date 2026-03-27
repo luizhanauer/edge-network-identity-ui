@@ -1,0 +1,62 @@
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice" style="background: transparent;">
+  <defs>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur" />
+      <feMerge>
+        <feMergeNode in="coloredBlur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <symbol id="packet-h" viewBox="0 0 40 10">
+      <path d="M0 5 L30 5" stroke="#39FF14" stroke-width="2" stroke-linecap="round" opacity="0.3" />
+      <circle cx="35" cy="5" r="2" fill="#39FF14" filter="url(#glow)" />
+    </symbol>
+
+    <symbol id="packet-v" viewBox="0 0 10 40">
+      <path d="M5 0 L5 30" stroke="#39FF14" stroke-width="2" stroke-linecap="round" opacity="0.3" />
+      <circle cx="5" cy="35" r="2" fill="#39FF14" filter="url(#glow)" />
+    </symbol>
+
+    <style>
+      @keyframes flow-right { from { transform: translate(-100px, 0); } to { transform: translate(900px, 0); } }
+      @keyframes flow-left { from { transform: translate(900px, 0); } to { transform: translate(-100px, 0); } }
+      @keyframes flow-down { from { transform: translate(0, -100px); } to { transform: translate(0, 700px); } }
+      @keyframes flow-up { from { transform: translate(0, 700px); } to { transform: translate(0, -100px); } }
+
+      .p-right { animation: flow-right 4s linear infinite; }
+      .p-left { animation: flow-left 5s linear infinite; }
+      .p-down { animation: flow-down 3.5s linear infinite; }
+      .p-up { animation: flow-up 6s linear infinite; }
+    </style>
+  </defs>
+
+  <g stroke="#39FF14" stroke-width="0.5" opacity="0.1" fill="none">
+    <path d="M-100 100 L900 400" />
+    <path d="M-100 300 L900 600" />
+    <path d="M-100 500 L900 200" />
+    <path d="M200 -100 L100 700" />
+    <path d="M500 -100 L600 700" />
+  </g>
+
+  <g class="p-right" style="animation-delay: 0s;">
+    <use href="#packet-h" x="100" y="165" width="40" height="10" transform="rotate(18 100 165)" />
+  </g>
+  <g class="p-right" style="animation-delay: 2s;">
+    <use href="#packet-h" x="50" y="345" width="40" height="10" transform="rotate(18 50 345)" />
+  </g>
+
+  <g class="p-left" style="animation-delay: 1.5s;">
+    <use href="#packet-h" x="700" y="465" width="40" height="10" transform="rotate(198 700 465)" />
+  </g>
+
+  <g class="p-down" style="animation-delay: 0.5s;">
+    <use href="#packet-v" x="515" y="100" width="10" height="40" transform="skewX(-5)" />
+  </g>
+
+  <g class="p-up" style="animation-delay: 3s;">
+    <use href="#packet-v" x="190" y="400" width="10" height="40" transform="skewX(5)" />
+  </g>
+
+</svg>
